@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var cities = ["Chicago", "Shanghai", "New York", "San Fransokyo"];
+            function func()
+            {
+                var part = document.getElementById("partial").value;
+                var suggestions = document.getElementById("suggestions")
+                var inner="<ul>";
+                for(var i = 0; i < cities.length; i++){
+                    if(cities[i].startsWith(part)){
+                        inner += "<li>" + cities[i] + "</li>";
+                    }
+                }
+                inner += "</ul>";
+                suggestions.innerHTML = inner;
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" id="partial" onkeyup="func()">
+        <div id="suggestions">Suggested Cities</div>
+    </body>
+</html>
